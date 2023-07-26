@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="description" content="Voc6 Backend">
+  <meta name="author" content="Author">
+  <meta name="generator" content="Hugo 0.72.0" />
+  <title>Voc6</title>
+  <link rel="stylesheet" href="http://localhost:5433/css/main.css" />
+  <link href="http://localhost:5433/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" type="image/x-icon" href="http://localhost:5433/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="http://localhost:5433/favicon.ico">
+</head>
+
+<body>
+  <div id="wrapper">
+    <header id="header" class="alt">
+      <a href="http://localhost:5433" class="logo"><strong>Voc6</strong> <span></span></a>
+      <nav>
+        <a href="#menu">Menu</a>
+      </nav>
+    </header>
+
+    <nav id="menu">
+      <ul class="links">
+        <li><a href="http://localhost:5433">Home</a></li>
+      </ul>
+
+      <ul class="actions vertical">
+        <li><a href="http://localhost:5433/app/register" class="button special fit">Register</a></li>
+      </ul>
+    </nav>
+
+    <section id="banner" class="major">
+      <div class="inner">
+        <header class="major">
+          <h1>Voc6: OOSE 2020 Backend Project</h1>
+        </header>
+        <div class="content">
+          <p>Ein Projekt zusammengestellt von Sameh Alkheder, Max Engesser, Justus Mairböck, Amr Wanli</p>
+          <ul class="actions">
+            <li><a href="#one" class="button next scrolly">Read the docs</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="two">
+      <div class="inner">
+        <header class="major">
+          <h2>Voc6</h2>
+        </header>
+        <p>Das Backend wurde mit dem Spark Java Framework geschrieben. Es liest Daten aus einer
+          PostgreSQL Datenbank und liefert sie an Clients aus. Des Weiteren erlaubt es Daten zu
+          löschen und zu modifizieren. Die genauen Operationen, die es unterstützen soll finden
+          Sie unten in der Dokumentation.</p>
+        <ul class="actions">
+          <li><a href="#one" class="button next scrolly"> Get Started</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <div id="main">
+      <section id="one" class="tiles">
+
+        <article>
+          <span class="image">
+            <img src="img/" alt="" />
+          </span>
+          <header class="major">
+            <h3>GET /login</h3>
+            <p>GET calls auf /login werden mit status 200 oder 401 beantwortet je nachdem,
+              ob die Header email und password valide Werte haben, oder das JWT valide ist.</p>
+          </header>
+        </article>
+
+        <article>
+          <span class="image">
+            <img src="img/" alt="" />
+          </span>
+          <header class="major">
+            <h3>POST /register</h3>
+            <p>POST calls auf /register, die in dem Body ein valides JSON haben, soll zur Folge haben,
+              dass ein neuer Nutzer erstellt wird. Das Objekt im Body soll zwei Strings enthalten:
+              email und password. Ist der Nutzer bereits vorhanden, wird ein Fehler zurückgegeben.</p>
+          </header>
+        </article>
+
+        <article>
+          <span class="image">
+            <img src="img/" alt="" />
+          </span>
+          <header class="major">
+            <h3>GET /voc</h3>
+            <p>Alle Vokabeln aus der Datenbank werden als JSON ausgegeben.</p>
+          </header>
+        </article>
+
+        <article>
+          <span class="image">
+            <img src="img/" alt="" />
+          </span>
+          <header class="major">
+            <h3>GET /voc/random</h3>
+            <p>Eine zufällige Vokabel (eine, die noch nicht Phase 5 hat) wird als JSON zurückgegeben.</p>
+          </header>
+        </article>
+
+        <article>
+          <span class="image">
+            <img src="img/" alt="" />
+          </span>
+          <header class="major">
+            <h3>POST /voc</h3>
+            <p>Übergibt der Nutzer hier ein JSON Objekt einer Vokabel als Body, wird diese in die Datenbank
+              eingetragen.</p>
+          </header>
+        </article>
+
+        <article>
+          <span class="image">
+            <img src="img/" alt="" />
+          </span>
+          <header class="major">
+            <h3>PATCH /voc/:id</h3>
+            <p>Übergibt der Nutzer hier ein JSON Objekt einer Vokabel als Body, sollen alle Felder,
+              die nicht null sind, in der Datenbank überschrieben werden. Die ID der Vokabel ergibt sich aus dem Pfad.
+            </p>
+          </header>
+        </article>
+
+        <article>
+          <span class="image">
+            <img src="img/" alt="" />
+          </span>
+          <header class="major">
+            <h3>DELETE /voc/:id</h3>
+            <p>Ruft der Nutzer diese URL auf, wird die referenzierte Vokabel gelöscht.</p>
+          </header>
+        </article>
+
+        <article>
+          <span class="image">
+            <img src="img/" alt="" />
+          </span>
+          <header class="major">
+            <h3>GET /login/jwt</h3>
+            <p>Sind Email und Password richtig gesetzt, wird ein signierter JWT Token ausgehändigt. Dieser hat eine
+              Laufzeit
+              von 3 Monaten. In einem JWT Token wird von dem Server die Identität des Nutzers kryptographisch
+              unterschrieben.</p>
+          </header>
+        </article>
+
+        <article>
+          <span class="image">
+            <img src="img/" alt="" />
+          </span>
+          <header class="major">
+            <h3>POST /changePassword</h3>
+            <p>Nach einer validen Anmeldung, wird der Wert aus dem Body als neues Passwort gesetzt.</p>
+          </header>
+        </article>
+
+        <article>
+          <span class="image">
+            <img src="img/" alt="" />
+          </span>
+          <header class="major">
+            <h3>POST /changeEmail</h3>
+            <p>Nach einer validen Anmeldung, wird der Wert aus dem Body als neue Email gesetzt.</p>
+          </header>
+        </article>
+
+      </section>
+    </div>
+    <footer id="footer">
+      <div class="inner">
+        <ul class="copyright">
+          <li>&copy; Copyright 2020</li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+  <script src="http://localhost:5433/js/jquery.min.js"></script>
+  <script src="http://localhost:5433/js/jquery.scrolly.min.js"></script>
+  <script src="http://localhost:5433/js/jquery.scrollex.min.js"></script>
+  <script src="http://localhost:5433/js/skel.min.js"></script>
+  <script src="http://localhost:5433/js/util.js"></script>
+  <script src="http://localhost:5433/js/main.js"></script>
+</body>
+
+</html>

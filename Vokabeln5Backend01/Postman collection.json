@@ -1,0 +1,419 @@
+{
+	"info": {
+		"_postman_id": "ac1c091f-5713-4c99-890b-5c5d67c4436a",
+		"name": "Voc6",
+		"description": "# The url is set to the variable {{url}}",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{{url}}/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						""
+					]
+				},
+				"description": "# Main website"
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"bye@gmail.com\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"register"
+					]
+				},
+				"description": "# Register with a valid email and a non empty password"
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/voc",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "email",
+						"type": "text",
+						"value": "bye@gmail.com"
+					},
+					{
+						"key": "password",
+						"type": "text",
+						"value": "password"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/voc",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"voc"
+					]
+				},
+				"description": "# Get all vocabularies from database in JSON format. An email and corresponding password is required."
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/voc JWT",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"value": "Bearer: eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIyIiwiaWF0IjoxNTk0NDcwNzgyLCJzdWIiOiJEZWluIExvZ2luIEpXVCBmw7xyIGRlbiBWb2thYmVsbiA1IEJhY2tlbmQgU2VydmVyIiwiaXNzIjoiVm9rYWJlbG4gNSBCYWNrZW5kIFNlcnZlciIsImV4cCI6MTYwMjI0Njc4Mn0.E0TUMfx7rV8sk_tCVVzilTXo8UrEpnr2Ya9eenif6s4",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/voc",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"voc"
+					]
+				},
+				"description": "# Get all vocabularies from database in JSON format. A JWT is required."
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/random",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "email",
+						"value": "bye@gmail.com",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "password",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/voc/random",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"voc",
+						"random"
+					]
+				},
+				"description": "# Get a random vocabulary from database"
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/voc/:id",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "email",
+						"value": "bye@gmail.com",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "password",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Sprache\": \"FR\",\n    \"Phase\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/voc/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"voc",
+						"2"
+					]
+				},
+				"description": "# Update vocabulary with given id"
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/voc/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "email",
+						"value": "bye@gmail.com",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "password",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/voc/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"voc",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/voc",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "email",
+						"type": "text",
+						"value": "bye@gmail.com"
+					},
+					{
+						"key": "password",
+						"type": "text",
+						"value": "password"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"FrAgE\": \"stern\",\n    \"AntWort\": \"star\",\n    \"SprAche\": \"EN\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/voc",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"voc"
+					]
+				},
+				"description": "# Insert new vocabulary into the database. The phase, when not given, is set automatically to one."
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/login/jwt",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "email",
+						"value": "bye@gmail.com",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "password",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/login/jwt",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login",
+						"jwt"
+					]
+				},
+				"description": "# Get a JWT from the server which expires after three months."
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/changePassword",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "email",
+						"value": "bye@gmail.com",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "new_password",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"newPassword\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/changePassword",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"changePassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/changeEmail",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "email",
+						"type": "text",
+						"value": "bye2@gmail.com"
+					},
+					{
+						"key": "password",
+						"type": "text",
+						"value": "password"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"newEmail\": \"bye@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/changeEmail",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"changeEmail"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "49afd5e4-32f3-4181-b5d2-97db67634b0c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "c41bdccf-2d21-4f5e-a527-eeb4ae54b367",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "2455b243-f9ae-49f3-95a2-0c95cef84de3",
+			"key": "url",
+			"value": "localhost:5433"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

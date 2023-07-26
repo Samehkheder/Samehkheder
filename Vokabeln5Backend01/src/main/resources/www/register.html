@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="description" content="Voc6 Backend">
+  <meta name="author" content="Author">
+  <meta name="generator" content="Hugo 0.72.0" />
+  <title>Register &middot; Voc6</title>
+  <!-- Stylesheets -->
+
+  <link rel="stylesheet" href="http://localhost:5433/css/main.css" />
+
+  <!-- Custom Fonts -->
+  <link href="http://localhost:5433/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://localhost:5433/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="http://localhost:5433/favicon.ico">
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header id="header" class="alt">
+      <a href="http://localhost:5433" class="logo"><strong>Voc6</strong> <span></span></a>
+      <nav>
+        <a href="#menu">Menu</a>
+      </nav>
+    </header>
+
+    <nav id="menu">
+      <ul class="links">
+        <li><a href="http://localhost:5433">Home</a></li>
+      </ul>
+      <ul class="actions vertical">
+        <li><a href="http://localhost:5433/app/register" class="button special fit">Register</a></li>
+      </ul>
+    </nav>
+    <div id="main" class="alt">
+      <section id="one">
+        <div class="inner">
+          <header class="major">
+            <h1>Register</h1>
+          </header>
+          <section id="contact">
+            <div style="text-align: center;">
+              <section>
+                <form>
+                  <div class="field half first">
+                    <label for="name">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                  </div>
+                  <div class="field half">
+                    <label for="email">Password</label>
+                    <input type="password" name="password" placeholder="Password" id="password" required>
+                  </div>
+                  <div class="field">
+                  </div>
+                  <ul class="actions">
+                    <p id="response"></p>
+                    <li><input type="button" value="submit" class="special" onclick="send()"/></li>
+                  </ul>
+                </form>
+              </section>
+            </div>
+          </section>
+
+        </div>
+      </section>
+    </div>
+    <footer id="footer">
+      <div class="inner">
+        <ul class="copyright">
+          <li>&copy; Copyright 2020</li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+  <script>
+    function send() {
+      var xhr = new XMLHttpRequest();
+      var url = "/register";
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      xhr.open("POST", url, true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      var data = JSON.stringify({"email": email, "password": password});
+      xhr.onreadystatechange = function () {
+          document.getElementById("response").innerText = xhr.responseText;
+      };
+      xhr.send(data);
+    }
+  </script>
+  <script src="http://localhost:5433/js/jquery.min.js"></script>
+  <script src="http://localhost:5433/js/jquery.scrolly.min.js"></script>
+  <script src="http://localhost:5433/js/jquery.scrollex.min.js"></script>
+  <script src="http://localhost:5433/js/skel.min.js"></script>
+  <script src="http://localhost:5433/js/util.js"></script>
+  <script src="http://localhost:5433/js/main.js"></script>
+</body>
+
+</html>
